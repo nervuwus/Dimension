@@ -1,6 +1,7 @@
 import drawing
 
-dimension = int(input("Dimension: "))
+dimension: int = int(input("Dimension: "))
+filename: str = input("FileName: ")
 """
 choose in wich dimension draw
 """
@@ -27,7 +28,7 @@ instruction = {
 def dimension_attrib(payload: list[dict[int | bool]], dimension: int) -> None:
     for u in range(0, len(payload)):
         for s in range(0, len(payload[u])):
-            payload[s] = 1 
+            payload[s] = 1
 
 """
 The instruction the programm has to follow when the array has a certain value
@@ -54,7 +55,7 @@ for x in range(0, len(plan)):
     print(get_values(x, plan)[0])
     print(sum(get_values(x, plan)[0]))
     instruction[sum(get_values(x, plan)[0])]()
-    end: str = drawing.save("draw")
+    end: str = drawing.save(filename)
     print(end)
 #while (arck.check_len(len(plan), plan) is True) and (force is not True):
 
